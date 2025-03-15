@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>მომხმარებლის წაშლა</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>დარწმუნებული ხართ რომ გსურთ "{{ user.fname }} {{ user.lname }}" წაშლა?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">დასტური</button>
+    </form>
+    <a href="{% url 'user_list' %}">გაუქმება</a>
+</body>
+</html>

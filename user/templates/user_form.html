@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>მომხმარებელი</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>მომხმარებლის {% if form.instance.pk %}რედაქტირება{% else %}შექმნა{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">შენახვა</button>
+    </form>
+    <a href="{% url 'user_list' %}">უკან დაბრუნება</a>
+</body>
+</html>
